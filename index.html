@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+
+    <!-- Documentation extras -->
+    <link rel="stylesheet" type="text/css" href="css/docs.min.css"/>
+
+    <title>Candidatos</title>
+    <meta name="theme-color" content="#0097A7">
+
+</head>
+<body>
+
+<a id="skippy" class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+    </div>
+</a>
+
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
+        CandidaTOP
+    </a>
+
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Cadastrar</a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+
+        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3"
+           href="https://github.com/bresan/candidatop">Source</a>
+        </li>
+
+    </ul>
+
+</header>
+
+<main class="bd-masthead" id="content" role="main">
+    <div id="top"></div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8" id="cadastro">
+            <form id="formCadastro">
+                <div class="form-group">
+
+                    <!-- Nome -->
+                    <label for="txtName">Nome do candidato</label>
+                    <input type="text" class="form-control" id="txtName" aria-describedby="emailHelp"
+                           placeholder="Insira o nome do candidato aqui">
+
+                    <!-- Nome -->
+                    <label for="txtEmail">E-mail do candidato</label>
+                    <input type="text" class="form-control" id="txtEmail" aria-describedby="emailHelp"
+                           placeholder="Insira o e-mail do candidato aqui">
+
+                    <!-- Sexo -->
+                    <label for="txtSexo">Sexo</label>
+                    <input type="text" class="form-control" id="txtSexo" aria-describedby="sexoHelp"
+                           placeholder="Insira o sexo do candidato aqui">
+
+                    <!-- Data de nascimento -->
+                    <label for="txtNascimento">Nascimento</label>
+                    <input type="text" class="form-control" id="txtNascimento"
+                           placeholder="2000/01/31">
+
+                    <!-- CPF -->
+                    <label for="txtCpf">CPF</label>
+                    <input type="text" class="form-control" id="txtCpf" aria-describedby="cpfHelp"
+                           placeholder="Insira o CPF do candidato aqui">
+
+                    <!-- CadJus -->
+                    <label for="txtCadjus">CadJus</label>
+                    <input type="text" class="form-control" id="txtCadjus"
+                           placeholder="Insira o CadJus do candidato aqui">
+
+                    <!-- Estado -->
+                    <label for="estados">Estado</label>
+                    <select class="form-control" id="estados">
+                        <option value=""></option>
+                    </select>
+
+                    <!-- Cidade -->
+                    <label for="cidades">Cidade</label>
+                    <select class="form-control" id="cidades">
+                    </select>
+
+                    <!-- Rua -->
+                    <label for="txtBairro">Bairro</label>
+                    <input type="text" class="form-control" id="txtBairro"
+                           placeholder="ex: Jardim das Bandeiras">
+
+                    <!-- Rua -->
+                    <label for="txtRua">Rua</label>
+                    <input type="text" class="form-control" id="txtRua"
+                           placeholder="ex: Rua dos Perdizes">
+
+                    <!-- Número -->
+                    <label for="txtNumero">Número</label>
+                    <input type="text" class="form-control" id="txtNumero"
+                           placeholder="ex: 164">
+
+                    <!-- Senha -->
+                    <label for="txtSenha">Senha (para futuras alterações)</label>
+                    <input type="password" class="form-control" id="txtSenha">
+
+                    <!-- Senha -->
+                    <label for="txtSenhaConfirma">Confirme a senha</label>
+                    <input type="password" class="form-control" id="txtSenhaConfirma">
+                </div>
+
+                <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+                <button id="edit" type="button" class="btn btn-info">Editar</button>
+                <button id="remove" type="button" class="btn btn-danger">Remover</button>
+                <button id="cancel" type="button" class="btn btn-light">Cancelar</button>
+
+            </form>
+        </div>
+        <div class="col-md-2">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <span id="spanStatus"></span>
+
+            <table id="candidates-table" class="table">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">CadJus</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+    </div>
+
+    <div id="bottom" class="row">
+
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8">
+            Rodrigo Bresan - GPL v3.0
+        </div>
+
+        <div class="col-md-2">
+        </div>
+    </div>
+</main>
+<!--JQuery-->
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<!-- Scripts -->
+<script src="js/utils/Validator.js"></script>
+<script src="js/utils/FieldUtils.js"></script>
+<script src="js/utils/IterableUtils.js"></script>
+<script src="js/utils/AnimationUtils.js"></script>
+<script src="js/model/LocationRepository.js"></script>
+<script src="js/model/CandidatesRepository.js"></script>
+<script src="js/presenter/CandidatesPresenter.js"></script>
+<script src="js/view/add_candidate/AddCandidateLocation.js"></script>
+<script src="js/view/add_candidate/AddCandidateActions.js"></script>
+<script src="js/view/add_candidate/AddCandidate.js"></script>
+<script src="js/view/add_candidate/AddCandidateMapper.js"></script>
+<script src="js/view/list_candidates/CandidateItemActions.js"></script>
+<script src="js/view/list_candidates/CandidateList.js"></script>
+<script src="js/view/CandidatesView.js"></script>
+<script src="js/view/index.js"></script>
+
+</body>
+
+</html>
